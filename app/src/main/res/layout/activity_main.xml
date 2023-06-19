@@ -4,56 +4,7 @@
     android:orientation="vertical"
     android:padding="16dp">
 
-    <EditText
-        android:id="@+id/et_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Name"
-        android:inputType="text"
-        android:maxLines="1"
-        android:minHeight="48dp" />
 
-    <EditText
-        android:id="@+id/et_age"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Age"
-        android:inputType="number"
-        android:maxLines="1"
-        android:minHeight="48dp" />
-    <EditText
-        android:id="@+id/et_clas"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Class"
-        android:inputType="text"
-        android:maxLines="1"
-        android:minHeight="48dp" />
-
-    <EditText
-        android:id="@+id/et_sabaq"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Sabaq"
-        android:inputType="text"
-        android:maxLines="1"
-        android:minHeight="48dp" />
-    <EditText
-        android:id="@+id/et_sabqi"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Sabqi"
-        android:inputType="text"
-        android:maxLines="1"
-        android:minHeight="48dp" />
-    <EditText
-        android:id="@+id/et_manzil"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Manzil"
-        android:inputType="text"
-        android:maxLines="1"
-        android:minHeight="48dp" />
 
     <Button
         android:id="@+id/btn_save"
@@ -77,9 +28,5 @@
         android:layout_height="wrap_content"
         android:text="Search" />
 
-    <ListView
-        android:id="@+id/list_view"
-        android:layout_width="match_parent"
-        android:layout_height="250dp" />
 
 </LinearLayout>
