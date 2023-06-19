@@ -86,6 +86,46 @@ public class DbHelper extends SQLiteOpenHelper {
         db.delete(TABLE_NAME, COLUMN_NAME + " = ?", new String[] {Name});
         db.close();
     }
+    public List<Student> searchStudent(String Name) {
+        List<Student> students = new ArrayList<>();
+
+        String sql = "SELECT * FROM " + TABLE_NAME+" WHERE name="+Name;
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(sql, null);
+
+        /*
+        * if (cursorCourses.moveToFirst()) {
+            do {
+
+                studentArrayList.add(new StudentModel(cursorCourses.getString(1),
+                      cursorCourses.getInt(2),
+                        cursorCourses.getInt(3) == 1 ? true : false));
+            } while (cursorCourses.moveToNext());
+
+        }
+        * */
+
+        if (cursor.moveToFirst()) {
+            do {
+                @SuppressLint("Range") int id = cursor.getInt(cursor.getColumnIndex(COLUMN_ID));
+                @SuppressLint("Range") String name = cursor.getString(cursor.getColumnIndex(COLUMN_NAME));
+                @SuppressLint("Range") String age = cursor.getString(cursor.getColumnIndex(COLUMN_Age));
+                @SuppressLint("Range") String clas = cursor.getString(cursor.getColumnIndex(COLUMN_Clas));
+                @SuppressLint("Range") String sabaq = cursor.getString(cursor.getColumnIndex(COLUMN_Sabaq));
+                @SuppressLint("Range") String sabqi = cursor.getString(cursor.getColumnIndex(COLUMN_Sabaqi));
+                @SuppressLint("Range") String manzil = cursor.getString(cursor.getColumnIndex(COLUMN_Manzil));
+
+                students.add(new Student(name, age, clas,sabaq,sabqi,manzil));
+            } while (cursor.moveToNext());
+        }
+
+        cursor.close();
+        db.close();
+
+        return students;
+    }
+
 
 
     public List<Student> selectAllStudents() {
