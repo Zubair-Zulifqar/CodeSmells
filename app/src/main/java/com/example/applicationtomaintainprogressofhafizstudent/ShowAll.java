@@ -17,7 +17,7 @@ public class ShowAll extends AppCompatActivity {
     RecyclerView recyclerView;
     RecyclerView.Adapter adapter;
     RecyclerView.LayoutManager layoutManager;
-
+//
     List<Student> listofstudents;
     Button btnShow;
 
