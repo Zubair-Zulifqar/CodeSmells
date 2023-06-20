@@ -43,7 +43,7 @@ public class SearchStudent extends AppCompatActivity {
                 @Override
                 public void onClick(View view) {
                     String name = etName.getText().toString();
-                    listofstudents = db.searchStudent(name);
+                    listofstudents = (List<Student>)db.searchStudent(name);
                     recyclerView = findViewById(R.id.recylerViewStudent);
 
 

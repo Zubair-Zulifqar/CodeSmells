@@ -4,7 +4,7 @@ public class Student {
     private String name;
     private String age;
     private String clas;
-    private String sabaq;//---
+    private String sabaq;
     private String sabqi;
     private String manzil;
     public Student(String name, String age, String clas, String sabaq, String sabqi, String manzil) {

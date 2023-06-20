@@ -35,10 +35,10 @@ public class DbHelper extends SQLiteOpenHelper {
                 + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
                 + COLUMN_NAME + " TEXT,"
                 + COLUMN_Age + " INTEGER,"
-                + COLUMN_Clas + "TEXT, "
+                + COLUMN_Clas + " TEXT,"
                 + COLUMN_Sabaq + " TEXT,"
-                + COLUMN_Sabaqi + " INTEGER,"
-                + COLUMN_Manzil + "TEXT "
+                + COLUMN_Sabaqi + " INTEGER ,"
+                + COLUMN_Manzil + " TEXT"
                 + ")";
         db.execSQL(sql);
     }
@@ -86,13 +86,18 @@ public class DbHelper extends SQLiteOpenHelper {
         db.delete(TABLE_NAME, COLUMN_NAME + " = ?", new String[] {Name});
         db.close();
     }
+
+
     public List<Student> searchStudent(String Name) {
         List<Student> students = new ArrayList<>();
 
-        String sql = "SELECT * FROM " + TABLE_NAME+" WHERE name="+Name;
+
 
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor cursor = db.rawQuery(sql, null);
+        String sql = "SELECT * FROM " + TABLE_NAME + " WHERE name=?";
+        String[] selectionArgs = {Name}; // Provide the value for the search criteria
+
+        Cursor cursor = db.rawQuery(sql, selectionArgs);
 
         /*
         * if (cursorCourses.moveToFirst()) {
@@ -106,7 +111,7 @@ public class DbHelper extends SQLiteOpenHelper {
         }
         * */
 
-        if (cursor.moveToFirst()) {
+        if (cursor != null && cursor.moveToFirst()) {
             do {
                 @SuppressLint("Range") int id = cursor.getInt(cursor.getColumnIndex(COLUMN_ID));
                 @SuppressLint("Range") String name = cursor.getString(cursor.getColumnIndex(COLUMN_NAME));
