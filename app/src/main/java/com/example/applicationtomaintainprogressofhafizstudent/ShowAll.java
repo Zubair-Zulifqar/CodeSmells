@@ -17,7 +17,7 @@ public class ShowAll extends AppCompatActivity {
     RecyclerView recyclerView;
     RecyclerView.Adapter adapter;
     RecyclerView.LayoutManager layoutManager;
-    EditText etName;
+
     List<Student> listofstudents;
     Button btnShow;
 
@@ -29,7 +29,7 @@ public class ShowAll extends AppCompatActivity {
 
 
 
-        etName = findViewById(R.id.name);
+
 
 
         btnShow = findViewById(R.id.btn_show);
@@ -42,7 +42,7 @@ public class ShowAll extends AppCompatActivity {
         btnShow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String name = etName.getText().toString();
+
                 listofstudents = (List<Student>)db.selectAllStudents();
                 recyclerView = findViewById(R.id.recylerView);
 
