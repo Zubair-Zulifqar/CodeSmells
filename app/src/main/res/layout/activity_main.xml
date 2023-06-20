@@ -27,6 +27,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Search" />
+    <Button
+        android:id="@+id/btn_showall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Search" />
 
 
 </LinearLayout>
